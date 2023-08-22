@@ -1,0 +1,32 @@
+<div clas="container" style="padding: 5%;">
+    <h2 style="text-align: center;" class="mb-3">Employee Data</h2>
+    <br>
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Department</th>
+        <th scope="col">Salary</th>
+        <th scope="col">Mobile</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let e of emp">
+            <td>{{e.id}}</td>
+            <td>{{e.name|uppercase}}</td>
+            <td>{{e.email}}</td>
+            <td>{{e.department|uppercase}}</td>
+            <td>{{e.salary}}</td>
+            <td>{{e.phoneNumber}}</td>
+            <td>
+                <button class="btn btn-primary btn-sm" [routerLink]="['/Update', e.id]">Edit</button>
+                <button class="btn btn-danger btn-sm" (click)="deleteEmployee(e.id)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+</div>
+
